@@ -2,35 +2,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-
 const Scroller = () => {
+  const images = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'];
 
   return (
     <Swiper
-  modules={[Autoplay]}
-  spaceBetween={50}
-  slidesPerView={1}
-  autoplay={{
-    delay: 2000,
-    disableOnInteraction: false,
-  }}
-  onSlideChange={() => console.log('slide change')}
-  onSwiper={(swiper) => console.log(swiper)}
->
-  <SwiperSlide>
-    <div className='w-full h-[400px] bg-[url(/images/img1.jpg)] bg-cover bg-center'></div>
-  </SwiperSlide>
-  <SwiperSlide>
-    <div className='w-full h-[400px] bg-[url(/images/img2.jpg)] bg-cover bg-center'></div>
-  </SwiperSlide>
-  <SwiperSlide>
-    <div className='w-full h-[400px] bg-[url(/images/img3.jpg)] bg-cover bg-center'></div>
-  </SwiperSlide>
-  <SwiperSlide>
-    <div className='w-full h-[400px] bg-[url(/images/img4.jpg)] bg-cover bg-center'></div>
-  </SwiperSlide>
-</Swiper>
-
+      modules={[Autoplay]}
+      spaceBetween={30}
+      slidesPerView={1}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      className="w-full"
+    >
+      {images.map((img, index) => (
+        <SwiperSlide key={index}>
+          <div
+            className="w-full h-[200px] sm:h-[300px] md:h-[400px] bg-cover bg-center rounded"
+            style={{ backgroundImage: `url(/images/${img})` }}
+          ></div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
- export default Scroller
+
+export default Scroller;

@@ -60,10 +60,10 @@ function HomePage() {
               return (
                 <div
                   key={blog.id}
-                  className="p-4 mb-8 rounded-lg shadow-sm flex flex-col gap-6"
+                  className="p-4 mb-8 rounded-lg shadow-sm flex flex-col gap-6 bg-white"
                 >
                   {blog.image && (
-                    <div className="w-[450px] max-h-[285px] overflow-hidden rounded-lg mx-auto">
+                    <div className="w-full max-w-md md:max-w-xl max-h-[285px] overflow-hidden rounded-lg mx-auto">
                       <img
                         src={blog.image}
                         alt="blog"
@@ -74,11 +74,11 @@ function HomePage() {
 
                   <div className="flex flex-col justify-between">
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-semibold mb-1 hover:scale-[1.02] transition-transform duration-200 cursor-pointer">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-1 hover:scale-[1.02] transition-transform duration-200 cursor-pointer text-center md:text-left">
                         {blog.title}
                       </h3>
-                      <p className="text-xs text-right text-gray-500 mb-2">{blog.date}</p>
-                      <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base">
+                      <p className="text-xs text-gray-500 mb-2 text-right">{blog.date}</p>
+                      <p className="text-[#1A1A1A] leading-relaxed text-sm sm:text-base text-justify">
                         {isExpanded ? blog.content : `${blog.content.slice(0, 200)}...`}
                       </p>
                     </div>
@@ -91,6 +91,7 @@ function HomePage() {
                     </button>
                   </div>
                 </div>
+
               );
             })
           )}
