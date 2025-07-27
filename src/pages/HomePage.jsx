@@ -44,8 +44,13 @@ function HomePage() {
           <Scroller />
           <div className="my-10 px-2 sm:px-4 md:mt-16">
             <h1 className="text-2xl sm:text-3xl font-bold text-black text-center md:text-left">
-              Welcome to THEOARMI Blog
+              Welcome to{" "}
+              <span className="text-blue-800 hover:text-blue-600 hover:scale-105 transition-transform duration-200 inline-block">
+                THEOARMI
+              </span>{" "}
+              Blog
             </h1>
+
             <p className="text-slate-500 text-md sm:text-lg max-w-2xl mx-auto md:mx-0 text-center md:text-left">
               Dive into inspiring articles, tech insights, and personal stories that inform and engage.
             </p>
